@@ -1,6 +1,9 @@
 #include <SDL.h>
 #include <iostream>
 #include <SDL_mixer.h>
+
+// Game Logic Class 
+
 class Game
 {
     const int SCREEN_HEIGHT = 600;
