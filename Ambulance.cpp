@@ -1,7 +1,7 @@
 #include "Ambulance.hpp"
 #include "drawing.hpp"
 #include "DifficultyLevel.hpp"
-//This function is used to move the YellowBus on the screen and it is overriden from the Unit class
+
 //The move function is overriden from the Unit class
 void Ambulance::move()
 {
