@@ -11,7 +11,7 @@ using namespace std;
 class Car_Logic
 {
     // This is the score for our Game.
-    int scores = 0;
+    //int scores = 0;
     PlayerCar playercar;
     Mix_Music *music = NULL;
     // Screen dimension constants
@@ -19,7 +19,7 @@ class Car_Logic
     const int SCREEN_HEIGHT = 600;
 
 public:
-    int  getscore();
+    //int  getscore();
     bool passed_obstacle = false;
     bool checkup = false;
     bool checkdown = false;

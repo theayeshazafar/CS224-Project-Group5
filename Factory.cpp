@@ -26,8 +26,9 @@ list<Unit *> Factory::CreateObjects()
         if (objects.size() <= 4)
         {
                 CatCrossingRoad *tu1 = new CatCrossingRoad();
-                CatCrossingRoad *tu2 = new CatCrossingRoad(40, 240);
-                objects.push_back(tu1), objects.push_back(tu2);
+                //CatCrossingRoad *tu2 = new CatCrossingRoad(40, 240);
+                objects.push_back(tu1);
+                //objects.push_back(tu2);
         }
         if (objects.size() <= 5)
         {

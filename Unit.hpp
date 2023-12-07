@@ -12,7 +12,7 @@ class Unit{             //defining a class named unit as required that is to be 
     public:
         void draw();             //A predefined draw function that will be inherited by all the assets like cars, Road Barriors, PoliceCar, etc to draw objects.
         virtual void move();     //A virtual move function since each object have different srcRect values for animation, this function cannot be predefined but would be defined individually in each class.
-        friend class Car_Logic;  //making Car_Logic as a friend class since we need the access of the moveRect values in the Unit type list to check collision in Car_Logic class.
+        friend class Car_Logic;  //making CarLogic as a friend class since we need the access of the moveRect values in the Unit type list to check collision in Car_Logic class.
         ~Unit();                    //A virtual destructor for the Unit class.
         friend class Game;
 };
