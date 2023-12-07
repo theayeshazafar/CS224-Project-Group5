@@ -12,3 +12,4 @@ class RedCar : public Unit
         RedCar(int x, int y);
         ~RedCar();
 };
+

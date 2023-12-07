@@ -1,14 +1,32 @@
+#include "BlueCar.hpp"
 #include "drawing.hpp"
-#include "Unit.hpp"
-#pragma once
+#include "DifficultyLevel.hpp"
 
-//Class BlueCar inherting from Unit class and drawing the BlueCar on the screen and moving it through its move function
 //The move function is overriden from the Unit class
-class BlueCar : public Unit
+void BlueCar::move()
 {
-    public:
-        void move();
-        BlueCar(); 
-        BlueCar(int x, int y);
-        ~BlueCar();
-};
+    moverRect.y += (10*DifficultyLevel::getSpeed());
+    if (moverRect.y > 680)
+    {
+        moverRect.y = -50;
+    }
+}
+
+//This is the default constructor for the BlueCar class
+BlueCar::BlueCar()
+{
+    srcRect = {289,14,93,190}; 
+    moverRect = {540, 0, 60, 140};
+}
+
+//This is the overloaded constructor for the BlueCar class which takes in the x and y coordinates of the BlueCar
+//and dynamically creates the BlueCar on the screen at the specified co-ordinates from the factory class
+BlueCar::BlueCar(int x, int y)
+{       
+    srcRect = {289,14,93,190};       
+    moverRect = {x , y, 60, 140};      
+}
+
+//This is the destructor for the BlueCar class
+BlueCar::~BlueCar()
+{}
