@@ -48,7 +48,7 @@ CatCrossingRoad::CatCrossingRoad(int x, int y)
     moverRect = {x , y, 70, 30};       
 }
 
-//This is the destructor for the CatCrossingRoad class
+//This is the destructor for the class
 CatCrossingRoad::~CatCrossingRoad()
 {}
 
