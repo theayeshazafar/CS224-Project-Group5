@@ -15,7 +15,7 @@ void RedCar::move()
 //This is the default constructor for the RedCar class
 RedCar::RedCar()
 {
-    srcRect = {289,14,93,190}; 
+    srcRect = {105,14,67,188}; 
     moverRect = {540, 0, 60, 140};
 }
 
@@ -23,7 +23,7 @@ RedCar::RedCar()
 //and dynamically creates the RedCar on the screen at the specified co-ordinates from the factory class
 RedCar::RedCar(int x, int y)
 {       
-    srcRect = {289,14,93,190};       
+    srcRect = {105,14,67,188};       
     moverRect = {x , y, 60, 140};      
 }
 

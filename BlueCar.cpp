@@ -15,7 +15,7 @@ void BlueCar::move()
 //This is the default constructor for the BlueCar class
 BlueCar::BlueCar()
 {
-    srcRect = {289,14,93,190}; 
+    srcRect = {8,7,74,179}; 
     moverRect = {540, 0, 60, 140};
 }
 
@@ -23,7 +23,7 @@ BlueCar::BlueCar()
 //and dynamically creates the BlueCar on the screen at the specified co-ordinates from the factory class
 BlueCar::BlueCar(int x, int y)
 {       
-    srcRect = {289,14,93,190};       
+    srcRect = {8,7,74,179};       
     moverRect = {x , y, 60, 140};      
 }
 

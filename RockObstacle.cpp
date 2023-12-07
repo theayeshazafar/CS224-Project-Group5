@@ -14,18 +14,20 @@ void RockObstacle::move()
 //This is the default constructor for the RockObstacle class
 RockObstacle::RockObstacle()
 {
-    srcRect = {139,345,119,78}; 
+    srcRect = {28,221,95,76}; 
     moverRect = {405, -20, 120, 40};
 }
 
 //This is the overloaded constructor for the RockObstacle class which takes in the x and y coordinates of the rocks
 RockObstacle::RockObstacle(int x, int y)
 {      
-    srcRect = {139,345,119,78};    
+    srcRect = {28,221,95,76};    
     moverRect = {x , y, 120, 40};      
 }
 
 //This is the destructor for the RockObstacle class
 RockObstacle::~RockObstacle()
 {}
+
+
 
