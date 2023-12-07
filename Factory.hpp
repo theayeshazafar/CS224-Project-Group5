@@ -1,4 +1,6 @@
 #include "Ambulance.hpp"
+#include "BlueCar.hpp"
+#include "RedCar.hpp"
 #include "PoliceCar.hpp"
 #include "LogObstacle.hpp"
 #include "RockObstacle.hpp"
