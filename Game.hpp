@@ -1,6 +1,12 @@
 #include <SDL.h>
+#include <SDL_image.h>
+#include <stdio.h>
 #include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <time.h>
 #include <SDL_mixer.h>
+#include "Car_Logic.hpp"
 #include "drawing.hpp"
 #include "DifficultyLevel.hpp"
 //This is the main class of the game responsible for the game loop.
