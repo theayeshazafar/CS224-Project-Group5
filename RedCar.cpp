@@ -1,32 +1,31 @@
 #include "RedCar.hpp"
 #include "drawing.hpp"
-#include "DifficultyLevel.hpp"
 
-//The move function is overriden from the Unit class
+// This is the default constructor for the RedCar class
+RedCar::RedCar()
+{
+    srcRect = {105, 14, 67, 188};
+    moverRect = {275, -10, 40, 90};
+}
+
+// Overloaded constructor for the RedCar class which takes in the x and y coordinates 
+// and dynamically creates the RedCar on the screen at the specified co-ordinates on the screen.
+RedCar::RedCar(int x, int y)
+{
+    srcRect = {105, 14, 67, 188};
+    moverRect = {x, y, 40, 90};
+}
+
+// This function is used to move the RedCar on the screen and it is overriden from the Unit class
 void RedCar::move()
 {
-    moverRect.y += (10*DifficultyLevel::getSpeed());
-    if (moverRect.y > 680)
+    moverRect.y += (11 * DifficultyLevel::getSpeed());
+    if (moverRect.y > 650)
     {
         moverRect.y = -50;
     }
 }
 
-//This is the default constructor for the RedCar class
-RedCar::RedCar()
-{
-    srcRect = {105,14,67,188}; 
-    moverRect = {540, 0, 60, 140};
-}
-
-//This is the overloaded constructor for the RedCar class which takes in the x and y coordinates of the RedCar
-//and dynamically creates the RedCar on the screen at the specified co-ordinates from the factory class
-RedCar::RedCar(int x, int y)
-{       
-    srcRect = {105,14,67,188};       
-    moverRect = {x , y, 60, 140};      
-}
-
-//This is the destructor for the RedCar class
+//Destructor for RedCar Class
 RedCar::~RedCar()
 {}
