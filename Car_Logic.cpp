@@ -1,5 +1,5 @@
 #include <iostream>
-#include "CarLogic.hpp"
+#include "Car_Logic.hpp"
 #include <SDL.h>
 using namespace std;
 
@@ -86,21 +86,20 @@ void Car_Logic::CheckCollision()
             break;
         }
     }
-    // if (passed_obstacle)
-    // {
-    //     scores += 1;
-    //     // cout<<"The score for the Game is: "<<scores<<endl;
-    //     passed_obstacle = false;
-    // }
+    if (passed_obstacle)
+    {
+        scores += 1;
+        // cout<<"The score for the Game is: "<<scores<<endl;
+        passed_obstacle = false;
+    }
 }
-// int Car_Logic::getscore()
-// {
-//     return scores;
-// }
-// // This function calls the factory function to return a Unit type list to create the assets dynamically and push them to the Unit type list.
+int Car_Logic::getscore()
+{
+    return scores;
+}
+// This function calls the factory function to return a Unit type list to create the assets dynamically and push them to the Unit type list.
 // A check is also made to make sure that the objects are created only once or else the factory class will continue
 // to return a Unit type list with the same assets as the game is being played.
-
 void Car_Logic::createObject()
 {
     if (objectcheck == false)

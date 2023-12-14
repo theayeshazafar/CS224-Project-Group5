@@ -1,9 +1,9 @@
-#include "CatCrossingRoad.hpp"
+#include "Cat.hpp"
 #include "drawing.hpp"
 
 //This function is used to move the Cat on the screen and it is overriden from the Unit class
 //additionally it inherits animation variable from the Unit class to animate the Cat based on the srcRect values.
-void CatCrossingRoad::move()
+void Cat::move()
 {
     switch (animation)
     {
@@ -32,23 +32,22 @@ void CatCrossingRoad::move()
     }
 }
 
-//This is the default constructor for the CatCrossingRoad class
-CatCrossingRoad::CatCrossingRoad()
+//This is the default constructor for the Cat class
+Cat::Cat()
 {
    
     srcRect = {184,455,72,31};
     moverRect = {0, 290, 70, 30};
 }
 
-//This is the overloaded constructor for the CatCrossingRoad class which takes in the x and y coordinates of the Cat 
+//This is the overloaded constructor for the Cat class which takes in the x and y coordinates of the Cat 
 //and dynamically creates the Cat on the screen at the specified co-ordinates from the factory class
-CatCrossingRoad::CatCrossingRoad(int x, int y)
+Cat::Cat(int x, int y)
 {      
     srcRect = {184,455,72,31};        
     moverRect = {x , y, 70, 30};       
 }
 
-//This is the destructor for the class
-CatCrossingRoad::~CatCrossingRoad()
+//This is the destructor for the Cat class
+Cat::~Cat()
 {}
-

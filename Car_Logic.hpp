@@ -1,4 +1,5 @@
 #include "PlayerCar.hpp"
+#include "FactoryClass.hpp"
 #include <vector>
 #include <list>
 #include <SDL_mixer.h>
@@ -11,15 +12,17 @@ using namespace std;
 class Car_Logic
 {
     // This is the score for our Game.
-    //int scores = 0;
+    int scores = 0;
     PlayerCar playercar;
+    FactoryClass factory;
+    list<Unit *> objects;
     Mix_Music *music = NULL;
     // Screen dimension constants
     const int SCREEN_WIDTH = 800;
     const int SCREEN_HEIGHT = 600;
 
 public:
-    //int  getscore();
+    int  getscore();
     bool passed_obstacle = false;
     bool checkup = false;
     bool checkdown = false;

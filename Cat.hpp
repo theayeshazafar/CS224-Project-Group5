@@ -3,13 +3,14 @@
 #include "DifficultyLevel.hpp"
 #pragma once
 
+//Cat class inherting from Unit class and drawing the Cat on the screen and moving it through its move function 
 //The move function is overriden from the Unit class
-class CatCrossingRoad : public Unit
+class Cat : public Unit
 {
 
 public:
     void move();
-    CatCrossingRoad(); 
-    CatCrossingRoad(int x, int y);
-    ~CatCrossingRoad();
+    Cat(); 
+    Cat(int x, int y);
+    ~Cat();
 };

@@ -1,11 +1,11 @@
-#include "Factory.hpp"
+#include "FactoryClass.hpp"
 // This function dynamically creates all assets on the screen through the constructors
-// of the assets and pushes them into Unit* type list which is then returned in the CarLogic class.
-list<Unit *> Factory::CreateObjects()
+// of the assets and pushes them into Unit* type list which is then returned in the Car_Logic class.
+list<Unit *> FactoryClass::CreateObjects()
 {
         if (objects.size() <= 0)
         {
-                Ambulance *y1 = new Ambulance();
+                BlueCar *y1 = new BlueCar();
                 objects.push_back(y1);
         }
         if (objects.size() <= 1)
@@ -15,42 +15,32 @@ list<Unit *> Factory::CreateObjects()
         }
         if (objects.size() <= 2)
         {
-                BlueCar *w1 = new BlueCar();
+                RedCar *w1 = new RedCar();
                 objects.push_back(w1);
         }
         if (objects.size() <= 3)
         {
-                RedCar *tr1 = new RedCar();
+                Ambulance *tr1 = new Ambulance();
                 objects.push_back(tr1);
         }
         if (objects.size() <= 4)
         {
-                CatCrossingRoad *tu1 = new CatCrossingRoad();
-                //CatCrossingRoad *tu2 = new CatCrossingRoad(40, 240);
+                Cat *tu1 = new Cat();
+                //Cat *tu2 = new Cat(40, 240);
                 objects.push_back(tu1);
                 //objects.push_back(tu2);
         }
-        if (objects.size() <= 5)
-        {
-                ManCrossingRoad *s1 = new ManCrossingRoad();
-                objects.push_back(s1);
-        }
         if (objects.size() <= 6)
         {
-                LogObstacle *c1 = new LogObstacle();
+                Barrier *c1 = new Barrier();
                 objects.push_back(c1);
         }
         if (objects.size() <= 7)
         {
-                StopObstacle *c1 = new StopObstacle();
-                objects.push_back(c1);
+                ManCrossingRoad *s1 = new ManCrossingRoad();
+                objects.push_back(s1);
         }
         if (objects.size() <= 8)
-        {
-                RockObstacle *c1 = new RockObstacle();
-                objects.push_back(c1);
-        }
-        if (objects.size() <= 9)
         {
                 if (number_of_collisions == 3)
                 {
@@ -77,7 +67,7 @@ list<Unit *> Factory::CreateObjects()
         return objects;
 }
 // This is the destructor which deletes all the assets on the screen.
-Factory::~Factory()
+FactoryClass ::~FactoryClass()
 {
         for (auto &&i : objects)
         {
