@@ -164,6 +164,25 @@ bool Game::loadInstructions()
 	}
 	return success;
 }
+
+// checking if the mouse click is in the specified coordinates
+bool Game::handleInstructionClick()
+{
+    int xMouse, yMouse;
+    SDL_GetMouseState(&xMouse, &yMouse);
+
+    // Check if the click falls within the specified coordinates
+    if (xMouse > 580 && xMouse < 735 && yMouse > 520 && yMouse < 560)
+    {
+        // Transition to start screen
+        state = 0; // Set the desired state for the start screen
+        loadMedia(); // Load the start screen
+        return true; // Return true to indicate that the click was handled
+    }
+
+    return false; // Return false if the click was not handled
+}
+
 void Game::close()
 {
 	// Free loaded images
@@ -239,6 +258,15 @@ void Game::run()
 				{
 					state = 5;
 					loadvenues();
+				}
+				// Check if in instruction screen and handle the click
+                if (state == 2)
+                {
+                    if (handleInstructionClick())
+                    {
+                        // The click was handled, continue to the next iteration
+                        continue;
+                    }
 				}
 				// Upon Clicking, Venue will be choosen
 				if (state == 5 && xMouse > 288 && xMouse < 508 && yMouse > 165 && yMouse < 230)
