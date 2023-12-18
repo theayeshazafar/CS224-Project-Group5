@@ -35,6 +35,7 @@ public:
     bool loadvenues();
     void close();
     bool loadendscreen();
+    bool handleInstructionClick();
     SDL_Texture* loadTexture( std::string path );
     void run();
 };
