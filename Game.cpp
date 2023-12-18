@@ -294,7 +294,7 @@ void Game::run()
 					loadLevel();
 				}
 				// Upon tapping the instructions button the instructions screen is loaded.
-				if (state == 0 && xMouse > 30 && xMouse < 227 && yMouse > 516 && yMouse < 529)
+				if (state == 0 && xMouse > 30 && xMouse < 230 && yMouse > 525 && yMouse < 550)
 				{
 					state = 2;
 					loadInstructions();
