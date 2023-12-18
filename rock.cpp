@@ -18,3 +18,14 @@ rock::rock()
     srcRect = {28,221,95,76};
     moverRect = {250, -15, 50, 50};
 }
+
+//This is the overloaded constructor for the Barrier class which takes in the x and y coordinates of the Barrier
+rock::rock(int x, int y)
+{       
+    srcRect = {28,221,95,76};     
+    moverRect = {x , y, 50, 50};       
+}
+
+//This is the destructor for the Barrier class
+rock::~rock()
+{}
