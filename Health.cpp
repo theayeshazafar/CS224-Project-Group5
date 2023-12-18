@@ -3,7 +3,7 @@
 //Constructor for the Health class
 Health :: Health()
 {
-    srcRect = {400, 20, 70, 60};
+    srcRect = {412, 25, 71, 65};
     moverRect = {709,0, 30, 30};
 }
 
@@ -11,7 +11,7 @@ Health :: Health()
 //and dynamically creates the Health on the screen at the specified co-ordinates from the factory class
 Health :: Health(int x)
 {
-    srcRect = {400, 20, 70, 60};
+    srcRect = {412, 25, 71, 65};
     moverRect = {x, 0, 30, 30};
 }
 
