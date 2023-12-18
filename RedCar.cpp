@@ -5,7 +5,7 @@
 RedCar::RedCar()
 {
     srcRect = {105, 14, 67, 188};
-    moverRect = {275, -10, 40, 90};
+    moverRect = {360, -10, 40, 90};
 }
 
 // Overloaded constructor for the RedCar class which takes in the x and y coordinates 
