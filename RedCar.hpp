@@ -1,5 +1,6 @@
 #include "drawing.hpp"
 #include "Unit.hpp"
+#include "DifficultyLevel.hpp"
 #pragma once
 
 //Class RedCar inherting from Unit class and drawing the RedCar on the screen and moving it through its move function
