@@ -65,6 +65,21 @@ void Car_Logic::CheckCollision()
     bool passed_obstacle = false;
     for (Unit *x : objects)
     {
+        // Horizontal Overlap
+        /*playercar.moverRect.x + playercar.moverRect.w >= x->moverRect.x
+         Checks if the right edge of the player car's rectangle is touching the left edge of the other object's rectangle. 
+         
+        playercar.moverRect.x <= x->moverRect.x + x->moverRect.w
+        Checks if the left edge of the player car's rectangle is touching the right edge of the other object's rectangle.*/ 
+
+        // Vertical Overlap
+        /*playercar.moverRect.y + playercar.moverRect.h >= x->moverRect.y
+        Checks if the bottom edge of the player car's rectangle is touching the top edge of the other object's rectangle. 
+        
+        playercar.moverRect.y <= x->moverRect.y + x->moverRect.h
+        Checks if the top edge of the player car's rectangle is touching the bottom edge of the other object's rectangle.*/
+
+
         // Following are the conditions for Collision.
         if ((playercar.moverRect.x + playercar.moverRect.w >= x->moverRect.x) &&
             (playercar.moverRect.x <= x->moverRect.x + x->moverRect.w)        && 
@@ -89,13 +104,14 @@ void Car_Logic::CheckCollision()
     if (passed_obstacle)
     {
         scores += 1;
-        // cout<<"The score for the Game is: "<<scores<<endl;
+        cout<<"The score for the Game is: "<<scores<<endl;
         passed_obstacle = false;
     }
 }
 int Car_Logic::getscore()
 {
     return scores;
+    cout << scores;
 }
 // This function calls the factory function to return a Unit type list to create the assets dynamically and push them to the Unit type list.
 // A check is also made to make sure that the objects are created only once or else the factory class will continue
