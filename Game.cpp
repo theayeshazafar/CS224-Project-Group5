@@ -320,15 +320,15 @@ void Game::run()
 				// Following will handle selection of level
 				if (state == 4 && xMouse >= 555 && xMouse <= 775 && yMouse >= 175 && yMouse <= 235)
 				{
-					level.setLevel(2); // This will tell that player wanna play in Hard Mode
+					level.setLevel(2); // This will tell that player want to play in Hard Mode
 				}
 				if (state == 4 && xMouse >= 288 && xMouse <= 512 && yMouse >= 175 && yMouse <= 235)
 				{
-					level.setLevel(1); // This will tell that player wanna play in Medium Mode
+					level.setLevel(1); // This will tell that player want to play in Medium Mode
 				}
 				if (state == 4 && xMouse >= 26 && xMouse <= 242 && yMouse >= 175 && yMouse <= 235)
 				{
-					level.setLevel(0); // This will tell that player wanna play in Easy Mode
+					level.setLevel(0); // This will tell that player want to play in Easy Mode
 				}
 			}
 			// These are the keyboard events.

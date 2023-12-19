@@ -32,7 +32,7 @@ void Car_Logic::drawObjects()
     // Following condition is for Player Car to move backward only if it is in following range on screen.
     if (checkdown == true)
     {
-        if ((playercar.moverRect.y >= 0) && (playercar.moverRect.y <= (SCREEN_HEIGHT - playercar.moverRect.h))) //&&(playercar.moverRect.x >= 105  && playercar.moverRect.x <= 420))
+        if ((playercar.moverRect.y >= 0) && (playercar.moverRect.y <= (SCREEN_HEIGHT - playercar.moverRect.h))) 
         {
             +playercar;
         }
@@ -65,6 +65,21 @@ void Car_Logic::CheckCollision()
     bool passed_obstacle = false;
     for (Unit *x : objects)
     {
+        // Horizontal Overlap
+        /*playercar.moverRect.x + playercar.moverRect.w >= x->moverRect.x
+         Checks if the right edge of the player car's rectangle is touching the left edge of the other object's rectangle. 
+         
+        playercar.moverRect.x <= x->moverRect.x + x->moverRect.w
+        Checks if the left edge of the player car's rectangle is touching the right edge of the other object's rectangle.*/ 
+
+        // Vertical Overlap
+        /*playercar.moverRect.y + playercar.moverRect.h >= x->moverRect.y
+        Checks if the bottom edge of the player car's rectangle is touching the top edge of the other object's rectangle. 
+        
+        playercar.moverRect.y <= x->moverRect.y + x->moverRect.h
+        Checks if the top edge of the player car's rectangle is touching the bottom edge of the other object's rectangle.*/
+
+
         // Following are the conditions for Collision.
         if ((playercar.moverRect.x + playercar.moverRect.w >= x->moverRect.x) &&
             (playercar.moverRect.x <= x->moverRect.x + x->moverRect.w)        && 
@@ -80,6 +95,11 @@ void Car_Logic::CheckCollision()
             factory.number_of_collisions += 1;
             objects.pop_back();
         }
+
+        /*The top edge of the player car (playercar.moverRect.y) and the top edge of another object (x->moverRect.y) is less than 20 pixels 
+        but greater than 0 pixels. If this condition is met, it implies that there is no direct collision in the vertical direction, but 
+        the player car has passed over the top edge of the object without colliding.*/
+
         else if (((playercar.moverRect.y - x->moverRect.y) < 20) && ((playercar.moverRect.y - x->moverRect.y) > 0))
         {
             passed_obstacle = true;
@@ -89,7 +109,7 @@ void Car_Logic::CheckCollision()
     if (passed_obstacle)
     {
         scores += 1;
-        // cout<<"The score for the Game is: "<<scores<<endl;
+        cout<<"The number of obstacles dodged are: "<< scores <<endl; // Displays Score of the game on terminal
         passed_obstacle = false;
     }
 }

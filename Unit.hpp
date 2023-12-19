@@ -4,6 +4,8 @@
 using namespace std;
 #pragma once
 
+//Unit focuses on defining the common functionality and attributes shared by all game assets.
+
 //Parent Class for all the assets in the game
 class Unit{             //defining a class named unit as required that is to be inherited by all the assets like cars, Road Barriors, PoliceCar, etc.
     protected:
