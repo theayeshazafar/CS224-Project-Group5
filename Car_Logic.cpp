@@ -104,7 +104,7 @@ void Car_Logic::CheckCollision()
     if (passed_obstacle)
     {
         scores += 1;
-        cout<<"The score for the Game is: "<<scores<<endl;
+        cout<<"The score for the Game is: "<<scores<<endl; // Displays Score of the game on terminal
         passed_obstacle = false;
     }
 }
