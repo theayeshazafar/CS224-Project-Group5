@@ -5,7 +5,7 @@
 //The move function is overriden from the Unit class
 void Ambulance::move()
 {
-    moverRect.y += (10*DifficultyLevel::getSpeed());
+    moverRect.y += (7*DifficultyLevel::getSpeed());
     if (moverRect.y > 680)
     {
         moverRect.y = -50;
