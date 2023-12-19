@@ -26,9 +26,7 @@ list<Unit *> FactoryClass::CreateObjects()
         if (objects.size() <= 4)
         {
                 Cat *tu1 = new Cat();
-                //Cat *tu2 = new Cat(40, 240);
                 objects.push_back(tu1);
-                //objects.push_back(tu2);
         }
         if (objects.size() <= 6)
         {
