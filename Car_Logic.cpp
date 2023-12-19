@@ -32,7 +32,7 @@ void Car_Logic::drawObjects()
     // Following condition is for Player Car to move backward only if it is in following range on screen.
     if (checkdown == true)
     {
-        if ((playercar.moverRect.y >= 0) && (playercar.moverRect.y <= (SCREEN_HEIGHT - playercar.moverRect.h))) //&&(playercar.moverRect.x >= 105  && playercar.moverRect.x <= 420))
+        if ((playercar.moverRect.y >= 0) && (playercar.moverRect.y <= (SCREEN_HEIGHT - playercar.moverRect.h))) 
         {
             +playercar;
         }
@@ -95,6 +95,11 @@ void Car_Logic::CheckCollision()
             factory.number_of_collisions += 1;
             objects.pop_back();
         }
+
+        /*The top edge of the player car (playercar.moverRect.y) and the top edge of another object (x->moverRect.y) is less than 20 pixels 
+        but greater than 0 pixels. If this condition is met, it implies that there is no direct collision in the vertical direction, but 
+        the player car has passed over the top edge of the object without colliding.*/
+
         else if (((playercar.moverRect.y - x->moverRect.y) < 20) && ((playercar.moverRect.y - x->moverRect.y) > 0))
         {
             passed_obstacle = true;
@@ -104,14 +109,13 @@ void Car_Logic::CheckCollision()
     if (passed_obstacle)
     {
         scores += 1;
-        cout<<"The score for the Game is: "<<scores<<endl; // Displays Score of the game on terminal
+        cout<<"The number of obstacles dodged are: "<< scores <<endl; // Displays Score of the game on terminal
         passed_obstacle = false;
     }
 }
 int Car_Logic::getscore()
 {
     return scores;
-    cout << scores;
 }
 // This function calls the factory function to return a Unit type list to create the assets dynamically and push them to the Unit type list.
 // A check is also made to make sure that the objects are created only once or else the factory class will continue
